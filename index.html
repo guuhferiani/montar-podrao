@@ -32,7 +32,8 @@
 
             <div class="row">
 
-                <div class="col-md-6"> <!-- seção img -->
+                <!-- seção img -->
+                <div class="col-md-6">
                     <div class="row mt-2">
                         <div class="col">
                             <img :src="pao[0]">
@@ -40,9 +41,8 @@
                             <img :src="ketchup">
                             <img :src="mostarda">
                             <img :src="maionese">
-
-
-
+                            <img :src="hamburguer">
+                            <img :src="pao[1]">
                         </div>
                     </div>
                 </div> <!-- FIM seção img -->
@@ -118,7 +118,7 @@
                                         <input type="checkbox" class="form-check-input" value="ketchup"
                                             v-model="inputMolhos">
                                         <label class="form-check-label"> Ketchup </label>
-                                    
+
                                     </div>
 
                                     <!-- mostarda -->
@@ -127,7 +127,7 @@
                                         <input type="checkbox" class="form-check-input" value="mostarda"
                                             v-model="inputMolhos">
                                         <label class="form-check-label"> Mostarda </label>
-                                    
+
                                     </div>
 
                                     <!-- maionese -->
@@ -136,7 +136,7 @@
                                         <input type="checkbox" class="form-check-input" value="maionese"
                                             v-model="inputMolhos">
                                         <label class="form-check-label"> Maionese </label>
-                                    
+
                                     </div>
 
                                 </div>
@@ -151,8 +151,36 @@
                             <div class="card">
 
                                 <!-- TITULO - Tipos de Hamburguer -->
+                                <div class="card-header"> Tipo de Hamburguer </div>
 
                                 <!-- Card Body Tipos de Hamburguer -->
+                                <div class="card-body">
+
+                                    <!-- carne -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" value="bovino"
+                                            v-model="inputHamburguer">
+
+                                        <label class="form-check-label"> Bovino </label>
+                                    </div>
+
+                                    <!-- frango -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" value="frango"
+                                            v-model="inputHamburguer">
+
+                                        <label class="form-check-label"> Frango </label>
+                                    </div>
+
+                                    <!-- vegetal -->
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" value="soja"
+                                            v-model="inputHamburguer">
+
+                                        <label class="form-check-label"> Soja </label>
+                                    </div>
+
+                                </div>
 
 
                             </div>
@@ -161,8 +189,17 @@
 
                     <!-- Fazer Pedido -->
                     <div class="row mt-2">
+
                         <!--     button    Fazer pedido    -->
+                        <div class="col d-flex justify-content-end">
+
+                            <button type="button" class="btn btn-primary">
+                                Fazer o Pedido
+                            </button>
+
+                        </div>
                     </div>
+
                 </div> <!-- Fim col md -->
 
                 <div class="col-md-6">
@@ -234,17 +271,51 @@
                         case 'gergelim':
                             return ['imagens/pao_gergelim_superior.png', 'imagens/pao_gergelim_inferior.png']
                         case 'australiano':
-                            return ['imagens/pao_australiano_superior.png', 'imagens/imagens/pao_australiano_inferior.png']
+                            return ['imagens/pao_australiano_superior.png', 'imagens/pao_australiano_inferior.png']
                         default:
                             return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
                     }
                 },
+
                 alface() {
                     if (this.inputSaladas.includes('alface')) {
                         return 'imagens/alface.png'
                     }
                     return 'imagens/padrao/alface.png'
                 },
+
+                ketchup() {  //array
+                    if (this.inputMolhos.includes('ketchup')) {
+                        return 'imagens/ketchup.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                },
+                mostarda() {
+                    if (this.inputMolhos.includes('mostarda')) {
+                        return 'imagens/mostarda.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                },
+                maionese() {
+                    if (this.inputMolhos.includes('maionese')) {
+                        return 'imagens/maionese.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                },
+
+                hamburguer() {
+                    switch (this.inputHamburguer) {
+                        case 'bovino':
+                            return 'imagens/bovino.png'
+                        case 'frango':
+                            return 'imagens/frango.png'
+                        case 'soja':
+                            return 'imagens/soja.png'
+                        default:
+                            return 'imagens/padrao/hamburguer.png'
+                    }
+                },
+
 
             },
             methods: {
