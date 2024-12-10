@@ -35,12 +35,12 @@
                 <div class="col-md-6"> <!-- seção img -->
                     <div class="row mt-2">
                         <div class="col">
-                            <img :src="pao[0]"> 
+                            <img :src="pao[0]">
                         </div>
                     </div>
                 </div> <!-- FIM seção img -->
 
-                <div class="col-md-6">
+                <div class="col-md-6" v-if="etapa == 1">
 
                     <!-- TIPO do Pão -->
                     <div class="row mt-2">
@@ -48,7 +48,23 @@
                             <div class="card">
 
                                 <!-- TITULO - Tipo do Pão -->
+                                <div class="card-header">
+                                    Tipo do Pão
+                                </div>
+                                
+                                <div class="card-body">
 
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" value="gergelim" v-model="inputTipoPao">
+                                        <label class="form-check-label">Gergelim</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" value="australiano" v-model="inputTipoPao">
+                                        <label class="form-check-label">Australiano</label>
+                                    </div>
+
+                                </div>
                                 <!--Card Body Tipos de Pães -->
 
                             </div> <!-- fim card -->
@@ -159,6 +175,7 @@
                 inputSaladas:[],
                 inputMolhos: [],
                 inputHamburguer:'',
+                etapa: 1,
             },
             
             // propriedades Computadas -- Reativas
@@ -167,10 +184,24 @@
                     //switch para radio
                     switch(this.inputTipoPao) {
                         case 'gergelim':
-                            return['imagens/imagens/pao_gergelim_superior.png', 'imagens/pao_gergelim_inferior.png']
+                            return ['imagens/pao_gergelim_superior.png', 'imagens/pao_gergelim_inferior.png']
+                        case 'australiano':
+                            return ['imagens/pao_australiano_superior.png', 'imagens/imagens/pao_australiano_inferior.png']
+                        default: 
+                            return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
+                    }
+                },
+            },
+            methods: {
+                fazerPedido() {
+                    // se Pao e Carne definidos
+                    if(this.inputTipoPao && this.inputHamburguer) {
+                        this.etapa = 2  //avança p/ etapa fechar pedido
+                    } else {
+                        alert('Você precisa selecionar no mínimo um pão e um hamburguer')
                     }
                 }
-            }
+            },
 
 
         })
