@@ -1,0 +1,120 @@
+/* Estilos Globais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ffc107;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Estilo para os cards */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #ffc107;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #e0a800;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* Botões */
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffca28;
+    border: none;
+    color: #333;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+/* Inputs e Labels */
+.form-check-label {
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #ffc107;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border-radius: 8px;
+    border: 2px solid #ced4da;
+    padding: 10px;
+}
+
+input[type="text"]:focus {
+    border-color: #ffc107;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
+}
+
+/* Estilo da seção de imagens */
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .card-header {
+        font-size: 1rem;
+    }
+}
