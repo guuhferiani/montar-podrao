@@ -1,7 +1,16 @@
+/*  
+
+Preciso fazer parecer que esse projeto esta dentro de uma tela ou display de um totem, tenho a imagem em png, arte lembra um totem com moldura e um fundo escuro onde vai aparecer o projeto, preciso que ajuste o css para receber essa imagem no background.
+
+
+
+*/
+
+
 /* Estilos Globais */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #c4c4c4;
+    background-color: #f8f9fa;
     color: #333;
     margin: 0;
     padding: 0;
@@ -49,7 +58,6 @@ body {
     border-radius: 50px;
     font-weight: bold;
     transition: transform 0.2s ease;
-    margin-top: 10px;
 }
 
 .btn:hover {
@@ -79,10 +87,10 @@ body {
     font-weight: 500;
 }
 
-/* Estilo para inputs marcados */
-input[type="radio"]:checked,
-input[type="checkbox"]:checked {
-  background-color: #e00404;
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #ffc107;
+    cursor: pointer;
 }
 
 input[type="text"] {

@@ -1,0 +1,123 @@
+/* Estilo geral do body */
+body {
+    background-color: #333; /* Cor de fundo */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container do totem (quadro com moldura) */
+  .totem-container {
+    position: relative;
+    width: 512px;  /* Tamanho fixo do totem */
+    height: 512px;
+    margin: 0 auto;
+    background-color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Moldura do totem - ajusta a imagem do quadro */
+  .totem-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Área de exibição do conteúdo dentro do totem */
+  #app {
+    position: absolute;
+    top: 5%; /* Deixa um pequeno espaço nas bordas */
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;  /* Diminui padding para mais espaço */
+    box-sizing: border-box;
+  }
+  
+  /* Ajuste para as imagens do lanche (exibe dentro da área do display) */
+  img {
+    max-width: 80%;  /* Limita as imagens para não sair da tela */
+    height: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Cartões de seleção de opções */
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    width: 100%;  /* Garante que os cartões ocupem toda a largura */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+  }
+  
+  /* Títulos das opções dentro dos cartões */
+  .card-header {
+    background-color: #f8f9fa;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px;
+  }
+  
+  /* Estilo das entradas e checkboxes */
+  .form-check-input {
+    margin-right: 8px;
+  }
+  
+  /* Entradas de texto */
+  .form-control {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  /* Botões (confirmar, etc.) */
+  button {
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;  /* Faz os botões ocuparem toda a largura disponível */
+    margin-top: 10px;
+    padding: 12px;  /* Mais espaço no botão para toque fácil */
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Botões coloridos */
+  .btn-success {
+    background-color: #28a745;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Ajustes responsivos para telas menores (se necessário) */
+  @media (max-width: 512px) {
+    .totem-container {
+      width: 100%;
+      height: auto;
+    }
+  
+    .col-md-6 {
+      flex: 1 1 100%;
+    }
+  }
+  
