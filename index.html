@@ -16,14 +16,19 @@
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="estilo.css"> -->
 
+    <!-- Link do Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar">
         <!-- BARRA PARA TITULO  -->
         <div class="container justify-content-center">
-
+            <i class="fa-solid fa-burger fa-bounce" id="burgerIcon"></i>
             <span class="navbar-brand mb-0 h1"> Monte o seu Lanche </span>
 
         </div>
@@ -258,11 +263,11 @@
                             <div class="card">
 
                                 <!--  PEDIDO CONFIRMADO -->
-                                <div class="card-header"> 
-                                    Pedido Confirmado 
+                                <div class="card-header">
+                                    Pedido Confirmado
                                 </div>
 
-                                <!-- Mensagem --> 
+                                <!-- Mensagem -->
                                 <div class="card-body">
                                     <p> Agora é só aguardar ... </p>
                                     <p> Vamos levar o pedido até você. </p>
@@ -383,8 +388,8 @@
                         alert('Você precisa informar o seu Nome e a Mesa.')
                     }
                 },
-                
-                novoPedido(){
+
+                novoPedido() {
                     this.etapa = 1
 
                     this.inputTipoPao = ''
@@ -397,12 +402,21 @@
             },
             watch: {
                 etapa(novoValor) {
-                    if(novoValor == 1) {
+                    if (novoValor == 1) {
                         clearTimeout(this.novoPedidoAssincrono)
                     }
                 }
             }
         })
+
+        const icon = document.getElementById('burgerIcon');
+
+        setInterval(() => {
+            icon.classList.add('fa-bounce'); // Adiciona o efeito
+            setTimeout(() => {
+                icon.classList.remove('fa-bounce'); // Remove após o efeito
+            }, 1500); // Duração do efeito (ajustar para corresponder ao CSS)
+        }, 5000); // Intervalo de 5 segundos
 
     </script>
 

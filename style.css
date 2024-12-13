@@ -12,6 +12,11 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.navbar i {
+    margin-right: 50px;
+    font-size: 50px;
+}
+
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: bold;
